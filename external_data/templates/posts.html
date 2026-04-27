@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Statystyki Postów</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; }
+        .dashboard-card { padding: 20px; border: 1px solid #ccc; border-radius: 8px; }
+    </style>
+</head>
+<body>
+    <div class="dashboard-card">
+        <h2>📝 Statystyki Aktywności Użytkownika</h2>
+        
+        {% if posts_data.success %}
+            <p><strong>Użytkownik ID:</strong> {{ posts_data.user_id }} napisał łącznie <strong>{{ posts_data.post_count }} postów</strong>.</p>
+            <p><strong>Średnia długość tytułu:</strong> {{ posts_data.avg_title_len }} znaków.</p>
+            
+            <h3>Przykładowe posty:</h3>
+            <ul>
+                {% for post in posts_data.sample_posts %}
+                    <li><em>"{{ post.title }}"</em></li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p style="color: red;">Nie udało się pobrać danych z zewnętrznego API: {{ posts_data.error_message }}</p>
+        {% endif %}
+        
+        <br>
+        <a href="{% url 'weather' %}">Pogoda</a>
+    </div>
+</body>
+</html>
