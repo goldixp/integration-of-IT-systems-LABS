@@ -1,0 +1,13 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Prognoza Pogody</title>
+</head>
+<body>
+    <h1>Aktualna temperatura: {{ current_temp }}°C</h1>
+    
+    <h2>Prognoza na najbliższe 24h:</h2>
+    <img src="{% static 'weather_chart.png' %}" alt="Wykres temperatury">
+</body>
+</html>
