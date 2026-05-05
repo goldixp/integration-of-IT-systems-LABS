@@ -24,8 +24,8 @@ SECRET_KEY = 'django-insecure-vqngv(u=4n_!bd+8*=#8d4=r(-i^*z=st5b$)_r)$h+6z%zx*^
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
-
-ALLOWED_HOSTS = []
+ 
+ALLOWED_HOSTS = ['*']
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # Application definition
