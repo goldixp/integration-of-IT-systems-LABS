@@ -15,8 +15,8 @@ class BlogTests(TestCase):
         )
 
     def test_post_content(self):
-        post = Post.objects.get(id=self.post.id) 
-        self.assertEqual(post.title, 'Testowy Post')
+        post = Post.objects.get(id=self.post.id)
+        self.assertEqual(post.title, 'TO JEST CELOWY BLAD')
 
     def test_homepage_status_code(self):
         response = self.client.get('/')
