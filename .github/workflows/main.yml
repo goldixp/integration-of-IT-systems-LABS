@@ -59,3 +59,11 @@ jobs:
         DB_HOST: localhost
         DB_PORT: 5432
       run: python manage.py test
+
+    - name: Trigger Render Deployment
+      run: curl -X POST "${{ secrets.RENDER_DEPLOY_HOOK_URL }}"
+
+    - name: Wait for Deployment and Sanity Check
+      run: |
+        sleep 60
+        curl --fail https://TWOJA-NAZWA.onrender.com/ || exit 1
