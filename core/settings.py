@@ -24,8 +24,8 @@ SECRET_KEY = 'django-insecure-vqngv(u=4n_!bd+8*=#8d4=r(-i^*z=st5b$)_r)$h+6z%zx*^
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
-
-ALLOWED_HOSTS = []
+ 
+ALLOWED_HOSTS = ['*']
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # Application definition
@@ -78,10 +78,10 @@ WSGI_APPLICATION = 'core.wsgi.application'
 DATABASES = {
     'default': {
        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': os.environ.get('DB_NAME'),
-        'USER': os.environ.get('DB_USER'),
-        'PASSWORD': os.environ.get('DB_PASS'),
-        'HOST': os.environ.get('DB_HOST'),  # To musi być 'db' (nazwa serwisu z compose)
+        'NAME': os.environ.get('DB_NAME', 'django_db'),
+        'USER': os.environ.get('DB_USER', 'django_user'),
+        'PASSWORD': os.environ.get('DB_PASS', 'django_pass'),
+        'HOST': os.environ.get('DB_HOST'), 
         'PORT': os.environ.get('DB_PORT', '5432'),
     }
 }
