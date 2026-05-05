@@ -1,3 +1,4 @@
+[![Django CI Pipeline](https://github.com/goldixp/integration-of-IT-systems-LABS/actions/workflows/main.yml/badge.svg)](https://github.com/goldixp/integration-of-IT-systems-LABS/actions/workflows/main.yml)
 # Laboratorium 1: Git, GitHub i przygotowanie środowiska Django
 SYMULACJA KONFLIKTU
 
