@@ -66,4 +66,4 @@ jobs:
     - name: Wait for Deployment and Sanity Check
       run: |
         sleep 60
-        curl --fail https://TWOJA-NAZWA.onrender.com/ || exit 1
+        curl --fail https://integration-of-it-systems-labs.onrender.com || exit 1
